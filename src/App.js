@@ -88,7 +88,7 @@ function App() {
       <div className={classes.divContainer}>
         {/* Names */}
         <form onSubmit={onAddClick} className={classes.divAddContainer}>
-          <Input placeholder="Group Name" type="text" size="small" name="name" required={true} className={classes.TextBox} />
+          <Input placeholder="Student Name" type="text" size="small" name="name" required={true} className={classes.TextBox} />
           <Button type="submit" variant="contained" color="primary" size="small" style={{ textTransform: "none" }} >
             Add
           </Button>

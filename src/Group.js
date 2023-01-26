@@ -1,6 +1,6 @@
 import React from "react";
 import { useDrop } from "react-dnd";
-
+import Name from "./Name"
 const Group = ({ group, onDrop }) => {
   const [{ canDrop, isOver }, drop] = useDrop({
     accept: "name",
@@ -23,11 +23,11 @@ const Group = ({ group, onDrop }) => {
         color: "white",
         margin: 5,
         minWidth: 300,
-        height: 100
+        minHeight: 100
       }}
     >
       {group.name[0].toUpperCase() + group.name.substring(1).toLowerCase()}
-      {group.student.map((name,i) => <div key={i} style={{paddingLeft:10}}>{name}</div>)}
+      {group.student.map((name, i) => <Name key={i} name={name} /> )}
     </div>
   );
 };

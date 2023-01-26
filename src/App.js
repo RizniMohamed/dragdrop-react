@@ -73,6 +73,10 @@ function App() {
   };
 
   const onDrop = (itemName, groupName) => {
+
+    const oldGroup = group.find(g => g.student.find(name => name.toLowerCase() === itemName.toLowerCase()))
+    if (oldGroup) oldGroup.student = oldGroup.student.filter(name => name.toLowerCase() !== itemName.toLowerCase())
+
     const targetGroup = group.find(g => g.name.toLowerCase() === groupName.toLowerCase())
     targetGroup.student.push(itemName)
     setGroup(group)
